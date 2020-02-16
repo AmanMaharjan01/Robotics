@@ -29,9 +29,11 @@
 			<p><strong>Hardwares:</strong></p>
 			<ul type="radio">
 				<li> Raspberry pi 4</li>
-				<li> Object Sensor</li>
-				<li> Thermo Sensor</li>
-				<li> Motor</li>
+				<li> Ultrasonic sensor</li>
+				<li> Servo motor</li>
+				<li> LDR light</li>
+				<li> Bulb</li>
+				<li> Smoke Sensor</li>
 			</ul>
 			<p><strong>Features:</strong></p>
 			<p>Thermometer, WaterLevel detector, Humidity, Door automation, Light automation</p>
@@ -49,47 +51,83 @@
 		   <p style="text-align: center; font-size: 25px; color: white">Temperature</p><hr>
 		     <div class="temp-content">
               <img src="img/icon2.png" width="180" height="180">
-              <span style="font-size: 80px; padding:10px; font-family: 'Oxygen', sans-serif; color: white;">5°C</span> 
+              <span style="font-size: 70px; padding:10px; font-family: 'Oxygen', sans-serif; color: white;">5°C</span> 
             </div>
-        </div><br>
-        <span><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</span><br>
-        <span><i class="fas fa-tint"></i> Humidity = 50%</span>
+        </div>
+        <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p><br>
+        <span> <i class="fas fa-tint"></i> Humidity = 50%</span>
         </div>
         <hr>
 
         <div class="row">
         	 <div class="col-md-3" style="padding:5px">
-        	 	<p style="text-align: center; font-size: 20px">Light</p><hr>
+        	    <p style="text-align: center; font-size: 20px">Light</p><hr>
         	 	<div class="blub">
 				<img id="myImg" src="img/pic_bulboff.gif" alt="bulb" style="padding-left: 35px;"><br><br>
-				<button class="btn btn-warning" onclick="document.getElementById('myImg').src='img/pic_bulbon.gif'">Turn On</button>
-				<button class="btn btn-dark" onclick="document.getElementById('myImg').src='img/pic_bulboff.gif'">Turn Off</button>
+				<button class="btn btn-warning " id="manual" style="margin-left: 36px;" >Manual</button>
+				<button class="btn btn-warning auto" onclick="document.getElementById('myImg').src='img/pic_bulbon.gif'" style="display: none;">Turn on</button>
+				<button class="btn btn-dark auto1" onclick="document.getElementById('myImg').src='img/pic_bulboff.gif'" style="display: none;">Turn off</button>
+				<button class="btn btn-dark" style="margin-left: 25px; margin-top: 8px;">Automatic</button>
 			   </div>
         	 </div>
 
         	 <div class="col-md-3">
-        	 	<p style="text-align: center; font-size: 20px">Door</p><hr>
+                <p style="text-align: center; font-size: 20px">Door</p><hr>
         	 	<div class="blub">
-				<img id="myImg1" src="img/door3.png" alt="door" style="padding-right: 35px; width: 200px; height: 180px"><br><br>
-				<button class="btn btn-warning" onclick="document.getElementById('myImg1').src='img/door2.png'">Open</button>
-				<button class="btn btn-dark" onclick="document.getElementById('myImg1').src='img/door3.png'">Close</button>
+				<img id="myImg1" src="img/door3.png" alt="door" style=" padding-right: 50px; width: 200px; height: 180px"><br><br>
+				<button class="btn btn-warning " id="manual1" style="margin-left: 36px;" >Manual</button>
+				<button class="btn btn-warning at" onclick="document.getElementById('myImg1').src='img/door2.png'" style="display:none;">Open</button>
+				<button class="btn btn-dark at1" onclick="document.getElementById('myImg1').src='img/door3.png'" style="display:none;">Close</button><br>
+					<button class="btn btn-dark bttn" style="margin-left: 25px; margin-top: 8px;" >Automatic</button>
 			   </div>
         	 </div>
 
         	 <div class="col-md-3">
         	 	<p style="text-align: center; font-size: 20px">Water Level</p><hr>
-        	 	<img src="img/water-level.png" width="200" height="150" style="padding-left: 35px;"><br><br>
-        	 	<span style="padding-left: 10px;">100 / 500l</span>
+        	 	<p style="text-align: center; font-size: 20px;"> Water Level : 50% </p><br>
+				<div class="machine">
+					<img id="myImg1" src="img/pump.png" style=" padding-left: 45px; width: 150px; height: 120px"><br><br>
+					<button class="btn btn-warning " id="machine1" style="margin-left: 60px;" >Manual</button>
+				<button class="btn btn-warning m1" onclick="document.getElementById('myImg1').src='img/door2.png'" style="display:none; margin-left: 30px">Open</button>
+				<button class="btn btn-dark m2" onclick="document.getElementById('myImg1').src='img/door3.png'" style="display:none;">Close</button><br>
+					<button class="btn btn-dark mbttn" style="margin-left: 50px; margin-top: 8px;" >Automatic</button>
+				</div>
         	 </div>
 
         	 <div class="col-md-3">
         	 	<p style="text-align: center; font-size: 20px">Smoke</p><hr>
+        	 	<div class="smoke">
+					<img id="myImg1" src="img/co2.png" style=" padding-left: 45px; width: 150px; height: 120px"><br><hr>
+					 <table class="table table-striped">
+						<thead>
+						  <tr>
+						    <th> 0 </th>
+						    <th>Safe</th>						    
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+						    <td>1</td>
+						    <td>Danger</td>
+						  </tr>
+						</tbody>
+						</table>
+				</div><br>
+				<p style="text-align: center; font-size: 20px;">Current Status :  0 </p>
         	 </div>
         </div>
+	</div><br>
+	<!---Camera--->
+	<div class="content-camera">
+		<p style="text-align: center; font-size: 50px;">Surveillance Camera</p>
+		<div class="camera">
+			<span style="color: red; position: relative;left: 94%;">live</span>
+		</div>
 	</div>
 
 
 	</div>
     <script type="text/javascript" src="js/clock.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</body>
 	</html>

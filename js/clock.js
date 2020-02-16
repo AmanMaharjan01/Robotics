@@ -58,3 +58,28 @@ setTimeout(show,1000)
 }
 
 show();
+
+
+function buttonWork(manual,btn,at,at1){
+	var x = document.getElementById(manual);
+    console.log(x);
+
+   x.addEventListener("click",function(){
+	document.getElementById(manual).style.display = "none";
+	document.querySelector("."+at).style.display="inline-block";
+	document.querySelector("."+at1).style.display="inline-block";
+    document.querySelector("."+at1).style.padding="2";
+	// document.querySelector("."+btn).style.display = "none";
+	console.log("Clicked");
+});
+
+}
+
+// For light
+buttonWork("manual","btn-dark","auto","auto1");
+
+// For door
+buttonWork("manual1","bttn","at","at1");
+
+// For machine
+buttonWork("machine1","mbttn","m1","m2");
